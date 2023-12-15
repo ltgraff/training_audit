@@ -138,6 +138,7 @@ def get_rec(val1, val2):
         return val2
     return val1
 
+
 '''
 create and insert item at the correct position of the list
 
