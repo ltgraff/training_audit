@@ -354,6 +354,7 @@ def match_lists(p_record_list, c5_req_list):
     return
 
 
+
 '''
 Unit Name
 Department ID
@@ -373,8 +374,15 @@ def add_to_list(c5_req_item, c5_index, p_record_item, p_record_index):
     i = c5_index
     q = p_record_index
     sl = []
-    sl.append(c5_req_item.div+" "+c5_req_item.branch)
-    sl.append(p_record_item.department)
+    p1 = ""
+    p2 = ""
+    idx = p_record_item.department.find('(')
+
+    p1 = p_record_item.department[0:idx-1]
+    p2 = p_record_item.department[idx+1:p_record_item.department.find(')')]
+
+    sl.append(p1)
+    sl.append(p2)
     sl.append(c5_req_item.posn)
     sl.append(p_record_item.rank)
     sl.append(p_record_item.source)
