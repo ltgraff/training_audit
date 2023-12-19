@@ -159,7 +159,30 @@ def list_find_index(list1, posn, item):
     return i 
 
 
+# Give a little extra help for looking for competencies
 def lookup_comp_type(da_comp):
+    if find_in_str(da_comp, "SPVCIV"):
+            return "HR"
+    elif find_in_str(da_comp, "SPVCCIVII"):
+            return "HR"
+    elif find_in_str(da_comp, "DCWF801"):
+            return "CYBER"
+    elif find_in_str(da_comp, "ISM-SRM"):
+            return "C4IT"
+    elif find_in_str(da_comp, "HRPM"):
+            return "HR"
+    elif find_in_str(da_comp, "IAM"):
+            return "Information Assurance, CYBER"
+    elif find_in_str(da_comp, "IAT"):
+            return "Information Assurance, CYBER"
+    elif find_in_str(da_comp, "DCWF723"):
+            return "CYBER"
+    elif find_in_str(da_comp, "ISM-SPM"):
+            return "C4IT"
+    elif find_in_str(da_comp, "REQMGT"):
+            return "ACQCRT"
+    elif find_in_str(da_comp, "ISM-SPM"):
+            return "C4IT"
     i = 0
     for i in range(0, len(g_comp_key)):
         if find_in_str(g_comp_key[i], da_comp):
